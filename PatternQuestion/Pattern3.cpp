@@ -12,6 +12,16 @@ int main(){
     int row, col, tempRow, count;
     cout<<"Print the no. of rows: ";
     cin>>row;
-    
-    
+    tempRow=1;
+    while (tempRow<=row)
+    {
+        col=1;
+        while (col<=row)
+        {
+            cout<<col;
+            col++;
+        }
+        cout<<"\n";
+        tempRow++;
+    }
 }
