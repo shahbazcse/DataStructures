@@ -21,7 +21,6 @@ int main(){
             cout<<alpha;
             col++;
         }
-        alpha++;
         cout<<"\n";
         tempRow++;
     }
