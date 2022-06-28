@@ -9,7 +9,7 @@ Print the pattern given below:
 */
 
 int main(){
-    int row, col, tempRow, count;
+    int row, col, tempRow;
     cout<<"Print the no. of rows: ";
     cin>>row;
     tempRow=1;
