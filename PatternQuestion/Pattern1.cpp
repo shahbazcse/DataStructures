@@ -18,7 +18,7 @@ int main(){
         col=1;
         while (col<=row)
         {
-            cout<<col;
+            cout<<"*";
             col++;
         }
         cout<<"\n";
