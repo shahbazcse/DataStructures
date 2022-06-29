@@ -21,6 +21,7 @@ int main(){
             cout<<" ";
             space--;
         }
+        
         col=1;
         while (col<=tempRow)
         {
