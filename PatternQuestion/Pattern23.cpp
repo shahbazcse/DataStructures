@@ -28,5 +28,4 @@ int main(){
         cout<<"\n";
         tempRow++;
     }
-    
 }
