@@ -9,9 +9,29 @@ Print the pattern given below:
 */
 
 int main(){
-    int row, col, tempRow, count;
+    int row, col, tempRow;
     cout<<"Print the no. of rows: ";
     cin>>row;
-    
-    
+    tempRow=1;
+    while (tempRow<=row)
+    {
+        int space=row-tempRow;
+        while(space>0){
+            cout<<" ";
+            space--;
+        }
+        col=1;
+        while(col<=tempRow){
+            cout<<col;
+            col++;
+        }
+        int start=1;
+        while(start<=tempRow-1)
+        {
+            cout<<tempRow-start;
+            start++;
+        }
+        cout<<"\n";
+        tempRow++;
+    }
 }
