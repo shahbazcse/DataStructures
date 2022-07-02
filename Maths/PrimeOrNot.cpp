@@ -1,6 +1,6 @@
+// CodeHelp
 #include<iostream>
 using namespace std;
-
 class Prime{
     public:
         int value;
@@ -12,7 +12,6 @@ class Prime{
                 cout<<x<<" is not a Prime number";
         }
 };
-
 int main(){
     int value;
     cout<<"Enter a number to check whether its prime or not: ";
