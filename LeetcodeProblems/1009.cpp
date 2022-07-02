@@ -3,6 +3,7 @@ public:
     int bitwiseComplement(int n) {
         int m=n;
         int mask=0;
+        // Edge case
         if(n==0)
             return 1;
         while(m!=0){
