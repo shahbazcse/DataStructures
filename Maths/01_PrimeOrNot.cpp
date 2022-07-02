@@ -7,9 +7,9 @@ class Prime{
     public:
         void checkPrime(int x){
             if(x%2 ==! 0)
-                cout<<x<<" is a Prime number";
+                cout<<x<<" is a Prime number"<<endl;
             else
-                cout<<x<<" is not a Prime number";
+                cout<<x<<" is not a Prime number"<<endl;
         }
 };
 int main(){
