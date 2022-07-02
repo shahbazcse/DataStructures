@@ -15,5 +15,5 @@ int main(){
         n=n>>1; // To move to next digit
         i++;
     }
-    cout<<"Binary Number: "<<ans<<endl;
+    cout<<"Binary Number: "<<ans<<endl; // To print the output
 }

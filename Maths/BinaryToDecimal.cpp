@@ -18,5 +18,5 @@ int main(){
         n=n/10; // To move to the next digit
         i++;
     }
-    cout<<"Decimal Number: "<<ans<<endl;
+    cout<<"Decimal Number: "<<ans<<endl; // To print the output
 }
