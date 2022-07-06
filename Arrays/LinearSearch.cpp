@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+// Linear Search
 bool search(int num[], int size, int key){
     for (int i = 0; i < size; i++)
     {
