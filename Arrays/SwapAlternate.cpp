@@ -28,5 +28,4 @@ int main(){
     printArray(even,6);
     swapAlternate(odd,5);
     printArray(odd,5);
-    cout<<"Working!"<<endl;
 }
