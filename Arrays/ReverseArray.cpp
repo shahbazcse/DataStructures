@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-// Reverse an Array
+// Reverse an Array using Two-Pointer Technique
 int reverse(int num[], int size){
     int temp;
     int end=size-1;
