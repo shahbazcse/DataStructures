@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Problem : Find the Factorial of a number
+
 int factorial(int n){
     // Base condition
     if(n==1)
