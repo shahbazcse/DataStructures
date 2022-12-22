@@ -109,6 +109,7 @@ void deleteNode(Node* &head, Node* &tail, int position)
 
             // Delete last node
             if(temp->next==NULL) tail = temp; // Updating 'tail'
+            else currentNode->next->prev = temp;
             
             currentNode->next = NULL;
             delete currentNode;
@@ -159,7 +160,7 @@ int main(){
 
     printLL(head);
 
-    deleteNode(head,tail,3);
+    deleteNode(head,tail,5);
 
     printLL(head);
     getLength(head);
