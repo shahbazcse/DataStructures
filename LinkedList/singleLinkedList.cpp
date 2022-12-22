@@ -27,18 +27,35 @@ public:
     }
 };
 
-void insertAtHead(Node* &head, int data)
+void insertAtHead(Node* &head, Node* &tail, int data)
 {
-    Node* temp = new Node(data); // Creating a temp node
-    temp->next = head;           // Storing address in 'head' into 'temp->next'
-    head = temp;                 // Pointing 'head' to 'temp' (storing address of 'temp' in 'head')
+    // Empty List
+    if(head==NULL && tail==NULL){
+        Node* temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
+    else{
+        Node* temp = new Node(data); // Creating a temp node
+        temp->next = head;           // Storing address present in 'head' into 'temp->next'
+        head = temp;                 // Pointing 'head' to 'temp' (storing address of 'temp' in 'head')
+    }
 }
 
-void insertAtTail(Node* &tail, int data)
+void insertAtTail(Node* &head, Node* &tail, int data)
 {
-    Node* temp = new Node(data); // Creating a temp node
-    tail->next = temp;           // Storing address of 'temp' in 'tail->next'
-    tail = tail->next;           // Pointing 'tail' to address stored in 'tail->next' i.e. 'temp' node
+    // Empty List
+    if(head==NULL && tail==NULL){
+        Node* temp = new Node(data);
+        head=temp;
+        tail=temp;
+    }
+    else{
+        Node* temp = new Node(data); // Creating a temp node
+        temp->next=tail->next;       // Storing address present in tail->next(NULL) into temp->next
+        tail->next = temp;           // Storing address of 'temp' in 'tail->next'
+        tail = temp;                 // Updating tail
+    }
 }
 
 void insertAtPosition(Node* &head, Node* &tail, int position, int data)
@@ -49,27 +66,26 @@ void insertAtPosition(Node* &head, Node* &tail, int position, int data)
     // Insert at Head
     if (position == 1)
     {
-        insertAtHead(head, data);
+        insertAtHead(head,tail, data);
         return;
     }
 
-    while (temp)
+    while (cnt < position - 1)
     {
-        // Insert at Tail
-        if (temp->next == NULL)
-        {
-            insertAtTail(tail, data);
-            return;
-        }
-        if (cnt == position - 1)
-        {
-            Node* nodeToInsert = new Node(data);
-            nodeToInsert->next = temp->next;
-            temp->next = nodeToInsert;
-        }
         temp = temp->next;
         cnt++;
     }
+
+    // Insert at Tail
+    if (temp->next == NULL)
+    {
+        insertAtTail(head,tail, data);
+        return;
+    }
+
+    Node* nodeToInsert = new Node(data);
+    nodeToInsert->next = temp->next;
+    temp->next = nodeToInsert;
 }
 
 void deleteNode(Node* &head, Node* &tail, int position)
@@ -91,7 +107,9 @@ void deleteNode(Node* &head, Node* &tail, int position)
         {
             Node* currentNode = temp->next;
             temp->next = currentNode->next;
+            // Delete last node
             if(temp->next==NULL) tail = temp; // Updating 'tail'
+            
             currentNode->next = NULL;
             delete currentNode;
         }
@@ -113,31 +131,37 @@ void printLL(Node* &head)
 
 int main()
 {
-    // Creating a new node object
-    Node* one = new Node(10);
+    // // Creating a new node object
+    // Node* one = new Node(10);
 
-    // Storing address of head/first node
-    Node* head = one;
-    Node* tail = one;
+    // // Storing address of head/first node
+    // Node* head = one;
+    // Node* tail = one;
 
     // cout << one->data << endl; // Printing data value present in current node
     // cout << one->next << endl; // Printing address of next node present in current node
 
-    insertAtHead(head, 12);
+    Node* head = NULL;
+    Node* tail = NULL;
+
+    insertAtHead(head,tail, 12);
 
     // printLL(head);
 
-    insertAtTail(tail, 5);
+    insertAtTail(head,tail, 5);
+    insertAtTail(head,tail, 7);
 
     printLL(head);
 
-    insertAtPosition(head, tail, 4, 100);
+    insertAtPosition(head, tail, 3, 100);
+
+    insertAtTail(head,tail, 28);
+
+    deleteNode(head,tail, 1);
 
     printLL(head);
 
-    deleteNode(head,tail, 4);
-
-    printLL(head);
+    // printLL(head);
 
     cout << "HEAD " << head->data << endl; // Check HEAD
     cout << "TAIL " << tail->data << endl; // Check TAIL
