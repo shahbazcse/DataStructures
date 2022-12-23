@@ -32,6 +32,7 @@ public:
 
         ListNode* fast = head;
         ListNode* slow = head;
+        // checking 'fast' for even nodes and 'fast->next' for odd nodes
         while(fast && fast->next){
             slow=slow->next;
             fast=fast->next->next;
