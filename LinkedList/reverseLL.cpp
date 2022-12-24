@@ -161,7 +161,7 @@ void reverseLL(Node* &head){
     // Approach 2: Using Recursion
     Node* prevNode = NULL;
     Node* currentNode = head;
-    Node* forward = currentNode->next;
+    Node* forward = NULL;
 
     reverse(head,prevNode,currentNode,forward);
 
