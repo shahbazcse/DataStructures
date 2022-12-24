@@ -118,6 +118,30 @@ void deleteNode(Node* &head, Node* &tail, int position)
     }
 }
 
+// My approach
+bool detectLoop(Node* &head){
+    Node* temp = head;
+    
+    while(temp){
+        if(temp->next==head) return true;
+        temp=temp->next;
+    }
+    return false;
+}
+
+// Floyd's Cycle Detection Algorithm
+bool hasCycle(Node *head) {
+    Node* slow = head;
+    Node* fast = head;
+
+    while(slow && fast && fast->next!=NULL){
+        slow=slow->next;
+        fast=fast->next->next;
+        if(fast==slow) return 1;
+    }
+    return 0;
+}
+
 void printLL(Node* &head)
 {
     Node* temp = head;
@@ -160,6 +184,9 @@ int main()
     deleteNode(head,tail, 1);
 
     printLL(head);
+
+    if(detectLoop(tail)) cout<<"Is circular"<<endl;
+    else cout<<"Is not circular"<<endl;
 
     // printLL(head);
 
