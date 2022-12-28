@@ -1,4 +1,4 @@
-// Detect Loop in LL: Total 3 ways
+// Detect Cycle/Loop in LL:
 
     // Approach 1: Floyd's Cycle Detection Algorithm
     class Solution {
@@ -35,7 +35,7 @@
         return false;
     }
 
-// Find starting node of Loop in LL:
+// Find starting node of Cycle/Loop in LL:
 
     class Solution {
     public:
@@ -61,7 +61,7 @@
         }
     };
 
-// Remove Loop from LL: Total 5 ways
+// Remove Cycle/Loop from LL:
 
     Node *removeLoop(Node *head){
         if(head==NULL) return NULL;
