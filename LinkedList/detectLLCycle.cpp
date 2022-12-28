@@ -1,3 +1,4 @@
+// Approach 1: Floyd's Cycle Detection Algorithm
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
@@ -12,3 +13,22 @@ public:
         return 0;
     }
 };
+
+// Approach 2: using Map for visited/non-visited nodes
+
+bool detectLoop(ListNode* head){
+    if(head==NULL) return false;
+
+    map<ListNode*, bool> visited;
+
+    ListNode* temp = head;
+
+    while(temp){
+        // Loop present
+        if(visited[temp]) return true;
+        
+        visited[temp] = true;
+        temp = temp->next;
+    }
+    return false;
+}
