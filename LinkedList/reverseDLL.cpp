@@ -5,8 +5,10 @@ DoublyLinkedListNode* reverse(DoublyLinkedListNode* llist) {
     
     while(currentNode){
         forward = currentNode->next;
+
         currentNode->next = prevNode;
         currentNode->prev = forward;
+        
         prevNode = currentNode;
         currentNode = forward;
     }
