@@ -1,16 +1,14 @@
-// Link: https://practice.geeksforgeeks.org/problems/quick-left-rotation3806/1
-
-class Solution{
-	public:
-	void leftRotate(int arr[], int k, int n)
-	{ 
-        int temp[n];
+// Link: https://leetcode.com/problems/rotate-array/
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n=nums.size();
+        vector<int> temp(n);
+        // Rotating the array;
         for(int i=0; i<n; i++){
-            temp[i]=arr[i];
+            temp[(i+k)%n]=nums[i];
         }
-        
-        for(int i=0; i<n; i++){
-            arr[i]=temp[(i+k)%n];
-        }
-	}
+        // Copying temp in nums
+        nums = temp;
+    }
 };
