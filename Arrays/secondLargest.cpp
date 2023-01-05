@@ -8,11 +8,6 @@ public:
 	    if(n==1) return -1;
         int max=arr[0];
         int max2=-1;
-        int cnt=0;
-        for(int i=1; i<n; i++){
-            if(arr[i]==arr[i-1]) cnt++;
-            if(cnt==n) return -1;
-        }
         for(int i=0; i<n; i++){
             if(max<arr[i]){
                 max2=max;
