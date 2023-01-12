@@ -22,13 +22,13 @@ class Solution{
                 ans.push_back(a[i][right]);
             }
             right--;
-            if(top<=bottom){
+            if(top<bottom){
                 for(int i=right; i>=left; i--){
                     ans.push_back(a[bottom][i]);
                 }
                 bottom--;
             }
-            if(left<=right){
+            if(left<right){
                 for(int i=bottom; i>=top; i--){
                     ans.push_back(a[i][left]);
                 }
