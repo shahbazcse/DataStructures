@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1
 
-// Approach: Sorting + 2 Pointer + Binary Search [TC: O(N*N)]
+// Approach: Sorting + 2 Pointers + Binary Search [TC: O(N*N)]
 
 class Solution{
     public:
