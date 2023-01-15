@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/count-the-triplets4615/1
 
-// Approach: Sort + Reverse + 2 Pointer + Binary Search
+// Approach: Sort + Reverse + 2 Pointer + Binary Search [TC: O(N*N)]
 
 class Solution{
 public:	
