@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/find-all-four-sum-numbers1732/1
 
-// Approach 1: Using Sorting + 2 Pointer + Binary Search [TC: O(N*N*N)]
+// Approach 1: Using Sorting + 4 Pointers + Binary Search [TC: O(N*N*N)]
 
 class Solution{
     public:
