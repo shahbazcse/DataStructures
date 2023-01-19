@@ -1,5 +1,7 @@
 // Link: https://www.codingninjas.com/codestudio/problems/first-and-last-position-of-an-element-in-sorted-array_1082549
 
+// Approach: [TC: O(N)]
+
 pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
 {
     int first=-1;

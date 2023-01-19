@@ -1,6 +1,6 @@
 // Link: https://www.codingninjas.com/codestudio/problems/painter's-partition-problem_1089557
 
-// Approach: Binary Search [TC: O(LogN)]
+// Approach: Binary Search [TC: O(N)]
 
 bool isPossible(vector<int> &boards, int k, int mid){
     int painterCount=1;

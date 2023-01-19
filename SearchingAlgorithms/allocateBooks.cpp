@@ -1,6 +1,6 @@
 // Link: https://www.codingninjas.com/codestudio/problems/allocate-books_1090540
 
-// Approach: Binary Search [TC: O(LogN)]
+// Approach: Binary Search [TC: O(N)]
 
 #include <bits/stdc++.h>
 bool isPossible(vector<int> arr, int n, int m, int mid){

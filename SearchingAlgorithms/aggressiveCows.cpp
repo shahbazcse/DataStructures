@@ -1,6 +1,6 @@
 // Link: https://www.codingninjas.com/codestudio/problems/aggressive-cows_1082559
 
-// Approach: Binary Search [TC: O(LogN)]
+// Approach: Binary Search [TC: O(N)]
 
 #include <bits/stdc++.h>
 bool isPossible(vector<int> &stalls, int k, int mid){
