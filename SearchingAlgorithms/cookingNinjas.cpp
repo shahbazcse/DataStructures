@@ -34,7 +34,7 @@ int minCookTime(vector<int> &rank, int m)
     // Time taken by the slowest cook with maximum rank to cook all dishes will be the maximum time or end of search space
     for(int i=1; i<=m; i++) totalTime+=slowestCook*i;
     
-    int e=totalTime;
+    int e=totalTime; // Ending time/ Maximum time
     
     int mid=s+(e-s)/2;
     
