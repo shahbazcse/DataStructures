@@ -28,8 +28,7 @@ public:
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode* temp = head;
-
+        
         ListNode* fast = head;
         ListNode* slow = head;
         // checking 'fast' for even nodes and 'fast->next' for odd nodes
