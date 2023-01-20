@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/find-length-of-loop/1
 
-// Approach: [TC: O(N)]
+// Approach: [TC: O(N*N)]
 
 int countNodesinLoop(struct Node *head)
 {
