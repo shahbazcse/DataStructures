@@ -28,9 +28,13 @@ Node* sortList(Node *head)
         temp=temp->next;
     }
     
-    // Merging all LL in sorted order
-    zeroTail->next = oneHead->next;
-    oneTail->next = twoHead->next;
+    // Merging all LL in sorted order while checking if 0,1,2 exists
+    if(oneHead->next){
+        zeroTail->next = oneHead->next;
+        oneTail->next = twoHead->next;
+    }else{
+        zeroTail->next = twoHead->next;
+    }
     twoTail->next = NULL;
     
     // Pointing to head
