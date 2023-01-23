@@ -12,16 +12,14 @@ class Solution {
             if(currNode->data==x){
                 forward=currNode->next;
                 
-                if(*head_ref==NULL || currNode==NULL) return;
                 if(*head_ref==currNode) *head_ref=currNode->next;
-                if(currNode->next) currNode->next->prev = currNode->prev;
-                if(currNode->prev) currNode->prev->next = currNode->next;
+                if(currNode->prev) currNode->prev->next=currNode->next;
+                if(currNode->next) currNode->next->prev=currNode->prev;
                 
                 delete currNode;
                 
                 currNode=forward;
-            }
-            else{
+            }else{
                 currNode=currNode->next;
             }
         }
