@@ -8,21 +8,21 @@ class Solution
     //Function to remove duplicates from unsorted linked list.
     Node * removeDuplicates( Node *head) 
     {
-        map<int, bool> found;
+        map<int,bool> found;
         
         Node* curr = head;
         Node* prev = NULL;
         
         while(curr){
             if(found[curr->data]){
-                prev->next=curr->next;
+                prev->next = curr->next;
                 delete curr;
-                curr=prev;
-            }else{
-                found[curr->data]=true;
-                prev=curr;
             }
-            curr=curr->next;
+            else{
+                found[curr->data]=true;
+                prev = curr;
+            }
+            curr=prev->next;
         }
         return head;
     }
