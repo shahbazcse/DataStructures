@@ -1,6 +1,8 @@
 // Detect Cycle/Loop in LL:
 
-    // Approach 1: Floyd's Cycle Detection Algorithm
+    // Link: https://leetcode.com/problems/linked-list-cycle/
+
+    // Approach 1: Floyd's Cycle Detection Algorithm [TC: O(N)]
     class Solution {
     public:
         bool hasCycle(ListNode *head) {
@@ -16,7 +18,7 @@
         }
     };
 
-    // Approach 2: using Map for visited/non-visited nodes
+    // Approach 2: using Map for visited/non-visited nodes [TC: O(N)]
 
     bool hasCycle(ListNode* head){
         if(head==NULL) return false;
@@ -37,9 +39,13 @@
 
 // Find starting node of Cycle/Loop in LL:
 
+    // Link: https://leetcode.com/problems/linked-list-cycle-ii/
+
+    // Approach: [TC: O(N^2)]
+
     class Solution {
     public:
-        Node* findStartingNode(ListNode *head) {
+        ListNode* detectCycle(ListNode *head) {
             ListNode* slow = head;
             ListNode* fast = head;
 
@@ -49,7 +55,7 @@
                 // Detect Loop
                 if(fast==slow){
                     // Find starting node of Loop
-                    Node* slow = head;
+                    ListNode* slow = head;
                     while(slow!=fast){
                         slow=slow->next; // At 1x speed
                         fast=fast->next; // At 1x speed
@@ -63,28 +69,48 @@
 
 // Remove Cycle/Loop from LL:
 
-    Node *removeLoop(Node *head){
-        if(head==NULL) return NULL;
-        if(head->next==NULL) return head;        
-    
-        Node* slow = head;
-        Node* fast = head;
+    // Link: https://practice.geeksforgeeks.org/problems/remove-loop-in-linked-list/1
 
-        while(slow && fast && fast->next!=NULL){
-            slow=slow->next; // At 1x speed
-            fast=fast->next->next; // At 2x speed
-            // Detect Loop
-            if(fast==slow){
-                // Find starting node of Loop
-                Node* slow = head;
-                Node* temp = head;
-                while(slow!=fast){
-                    slow=slow->next; // At 1x speed
-                    temp = fast;
-                    fast=fast->next; // At 1x speed
+    // Approach: [TC: O(N)]
+
+    class Solution
+    {
+        public:
+        //Function to remove a loop in the linked list.
+        Node* isLoop(Node* head){
+            Node* slow = head;
+            Node* fast = head;
+            
+            while(slow && fast && fast->next!=NULL){
+                slow=slow->next;
+                fast=fast->next->next;
+                if(slow==fast){
+                    return fast;
                 }
-                temp->next=NULL;
-            };
+            }
+            return NULL;
         }
-        return head;
-    }
+        void removeLoop(Node* head)
+        {
+            if(!isLoop(head)) return;
+            
+            Node* fast = isLoop(head);
+            Node* slow = head;
+            
+            // If LL is Circular
+            if(fast==head){
+                while(fast->next!=head){
+                    fast=fast->next;
+                }
+                fast->next=NULL;
+                return;
+            }
+            
+            while(fast->next!=slow->next){
+                fast=fast->next;
+                slow=slow->next;
+            }
+            fast->next=NULL;
+            return;
+        }
+    };
