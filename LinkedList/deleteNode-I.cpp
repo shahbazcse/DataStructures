@@ -1,6 +1,10 @@
-// 'head' of the LL is not given, only the 'node' to be deleted is given
+// Link: https://leetcode.com/problems/delete-node-in-a-linked-list/
+
+// Approach: [TC: O(1)]
+
 class Solution {
 public:
+    // 'head' of the LL is not given, only the 'node' to be deleted is given
     void deleteNode(ListNode* node) {
 
         if(node->next==NULL) delete node;
