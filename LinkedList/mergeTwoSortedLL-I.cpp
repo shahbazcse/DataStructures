@@ -1,4 +1,6 @@
-// Platform: Leetcode
+// Link: https://leetcode.com/problems/merge-two-sorted-lists/
+
+// Approach: [TC: O(N+M)]
 
 class Solution {
 public:
@@ -45,7 +47,9 @@ public:
     }
 };
 
-// Platform: CodeStudio
+// Link: https://www.codingninjas.com/codestudio/problems/merge-two-sorted-linked-lists_800332
+
+// Approach: [TC: O(N+M)]
 
 Node<int>* sortLL(Node<int>* first, Node<int>* second){
     

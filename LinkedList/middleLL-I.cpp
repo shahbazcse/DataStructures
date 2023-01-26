@@ -1,4 +1,6 @@
-// Approach 1:
+// Link: https://leetcode.com/problems/middle-of-the-linked-list/
+
+// Approach 1: Binary Search [TC: O(LogN)]
 class Solution {
 public:
     ListNode* middleLL(ListNode* &head, int &start, int &end){
@@ -24,7 +26,7 @@ public:
     }
 };
 
-// Approach 2:
+// Approach 2: [TC: O(N)]
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {

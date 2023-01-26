@@ -1,3 +1,7 @@
+// Link: https://www.hackerrank.com/challenges/reverse-a-doubly-linked-list/problem
+
+// Approach: [TC: O(N)]
+
 DoublyLinkedListNode* reverse(DoublyLinkedListNode* llist) {
     DoublyLinkedListNode* currentNode = llist;
     DoublyLinkedListNode* prevNode = NULL;

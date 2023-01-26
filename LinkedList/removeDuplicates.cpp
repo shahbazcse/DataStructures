@@ -1,6 +1,8 @@
 // Problem: Remove Duplicates from Sorted LL
 
-    // Approach 1:
+    // Link: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+
+    // Approach 1: [TC: O(N)]
 
     class Solution {
     public:
@@ -27,7 +29,9 @@
 
 // Problem: Remove Duplicates from Unsorted LL
 
-    // Approach 1: TC: O(n^2) solution
+    // Link: https://www.codingninjas.com/codestudio/problems/remove-duplicates-from-unsorted-linked-list_1069331
+
+    // Approach 1: [TC: O(N^2)]
 
     Node *removeDuplicates(Node *head)
     {
@@ -50,7 +54,7 @@
         return head;
     }
 
-    // Approach 2: TC: O(n) solution
+    // Approach 2: [TC: O(N)]
 
     Node *removeDuplicates(Node *head)
     {
