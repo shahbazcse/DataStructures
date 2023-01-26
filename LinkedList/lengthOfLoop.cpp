@@ -1,24 +1,28 @@
 // Link: https://practice.geeksforgeeks.org/problems/find-length-of-loop/1
 
-// Approach: [TC: O(N*N)]
+// Approach: [TC: O(N)]
 
 int countNodesinLoop(struct Node *head)
 {
     Node* slow = head;
     Node* fast = head;
     
-    while(slow && fast && fast->next!=NULL){
+    while(fast && fast->next!=NULL){
         slow=slow->next;
         fast=fast->next->next;
         if(slow==fast){
-            int cnt=1;
-            slow=slow->next;
-            while(slow!=fast){
-                slow=slow->next;
-                cnt++;
-            }
-            return cnt;
+            break;
         }
     }
-    return 0;
+    
+    if(slow!=fast) return 0;
+    
+    int cnt=1;
+    
+    while(slow->next!=fast){
+        slow=slow->next;
+        cnt++;
+    }
+    
+    return cnt;
 }
