@@ -5,32 +5,30 @@
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        if(head==NULL) return NULL;
+        if(head==NULL) return head;
 
-        ListNode* prevNode = NULL;
-        ListNode* currentNode = head;
+        ListNode* prev = NULL;
+        ListNode* curr = head;
         ListNode* forward = NULL;
-        ListNode* temp = head;
 
-        int cnt = 0;
+        ListNode* temp = head;
+        int cnt=0;
         while(temp){
-            temp = temp->next;
+            temp=temp->next;
             cnt++;
         }
-
+        
         int i=0;
         if(cnt>=k){
-            while(currentNode && i<k){
-                forward = currentNode->next;
-                currentNode->next = prevNode;
-                prevNode = currentNode;
-                currentNode = forward;
+            while(curr && i<k){
+                forward=curr->next;
+                curr->next=prev;
+                prev=curr;
+                curr=forward;
                 i++;
             }
             if(forward) head->next = reverseKGroup(forward,k);
-        }
-        else return head;
-        
-        return prevNode;
+        }else return head;
+        return prev;
     }
 };
