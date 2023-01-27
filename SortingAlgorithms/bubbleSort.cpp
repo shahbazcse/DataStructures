@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/bubble-sort/1
 
-// Approach: [TC: O()]
+// Approach: [TC: O(N^2)]
 
 // Bubble Sort is a stable and in-place sorting algorithm
 
