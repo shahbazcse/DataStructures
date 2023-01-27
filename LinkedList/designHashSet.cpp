@@ -1,13 +1,13 @@
 // Link: https://leetcode.com/problems/design-hashset/
 
-// Approach 1: For vector size upto 10^7 [TC: O(size)]
+// Approach 1: For vector size upto 10^6 [TC: O(N)]
 
 class MyHashSet {
 public:
     vector<int> m;
     int siz;
     MyHashSet() {
-        siz=1e6+1; // vector size <= 10^7
+        siz=1e6+1; // vector size <= 10^6
         m.resize(siz);
     }
     
@@ -27,7 +27,7 @@ public:
     }
 };
 
-// Approach 2: For vector size beyond 10^7 [TC: O(size)]
+// Approach 2: For vector size beyond 10^6 [TC: O(N)]
 
 class MyHashSet {
 public:
