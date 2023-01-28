@@ -36,7 +36,7 @@ class Solution{
                 arr[idx++] = second[j++];
                 cnt+=len1-i;
                 /*
-                    If first[i] is greater than second[j], then there are (len1 – i) inversions because left and right subarrays are sorted, 
+                    Here, first[i] > second[j], so there are (len1 – i) inversions because left and right subarrays are sorted, 
                     so all the remaining elements in left-subarray (first[i+1], first[i+2] … first[len1-1]) will be greater than second[j]
                 */
             }
