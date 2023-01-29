@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/sorting-elements-of-an-array-by-frequency/0
 
-// Approach: Using Hashing [TC: O(N)]
+// Approach: Using Hashing and Sorting [TC: O(NLogN) / SC: O(N)]
 
 #include <iostream>
 #include <bits/stdc++.h>
