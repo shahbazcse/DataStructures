@@ -1,26 +1,28 @@
-// Link: https://www.codingninjas.com/codestudio/problems/first-and-last-position-of-an-element-in-sorted-array_1082549
+// Link: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
 // Approach 1: Brute Force [TC: O(N)]
 
-pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
-{
-    int first=-1;
-    int last=-1;
-    int i=0;
-    for(i=0; i<n; i++){
-        if(arr[i]==k){
-            first=i;
-            break;
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int first=-1;
+        int last=-1;
+        int i=0;
+        for(i=0; i<nums.size(); i++){
+            if(nums[i]==target){
+                first=i;
+                break;
+            }
         }
-    }
-    for(int j=n-1; j>=i; j--){
-        if(arr[j]==k){
-            last=j;
-            break; 
+        for(int j=nums.size()-1; j>=i; j--){
+            if(nums[j]==target){
+                last=j;
+                break; 
+            }
         }
+        return {first, last};
     }
-    return {first, last};
-}
+};
 
 // Approach 2: Binary Search [TC: O(LogN)]
 
