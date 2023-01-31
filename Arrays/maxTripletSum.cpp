@@ -19,6 +19,6 @@ class Solution{
     }
 };
 
-// Approach 1: [TC: O(N)]
+// Approach 2: [TC: O(N)]
 
 // Find max, 2nd max, and 3rd max elements, and return their sum

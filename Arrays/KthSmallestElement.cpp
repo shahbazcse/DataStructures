@@ -1,6 +1,6 @@
 // Similar question: Kth Largest Element: Just return arr[size-K]
 
-// Link: 
+// Link: https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/1
 
 //Approach 1: Using sort() function [TC: O(NlogN)]
 
