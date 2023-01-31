@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/sort-colors/
 
-// Approach 1: Sorting - TC: O(nlogn)
+// Approach 1: Sorting [TC: O(NlogN) / SC: O(1)]
 
 class Solution {
 public:
@@ -14,7 +14,7 @@ public:
     }
 };
 
-// Approach 2: Using Dutch National Flag Algorithm
+// Approach 2: Using Dutch National Flag Algorithm [TC: O(N) / SC: O(1)]
 
 class Solution {
 public:
