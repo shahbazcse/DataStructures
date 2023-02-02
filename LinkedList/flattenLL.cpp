@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1
 
-// Approach: [TC: O(N*N*M)]
+// Approach 1: Merge Sort + Recursion [TC: O(N*N*M) / SC: O(N*M)]
 
 Node* merge(Node* head1, Node* head2){
     Node* ans = new Node(-1);
@@ -43,3 +43,6 @@ Node *flatten(Node *root)
    
    return merge(down,right);
 }
+
+// Approach 2: Priority Queues [TC: O(N * M * Log(N)) / SC: O(N)]
+
