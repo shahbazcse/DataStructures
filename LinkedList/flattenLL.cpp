@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/flattening-a-linked-list/1
 
-// Approach 1: Merge Sort + Recursion [TC: O(N*N*M) / SC: O(N*M)]
+// Approach 1: Merge Sort + Recursion + Backtracking [TC: O(N*N*M) / SC: O(N*M)]
 
 Node* merge(Node* head1, Node* head2){
     Node* ans = new Node(-1);
