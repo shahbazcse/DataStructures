@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/delete-middle-element-of-a-stack/1
 
-// Approach: Recursion [TC: O(N) / Aux. SC: O(N)]
+// Approach: Recursion + Backtracking [TC: O(N) / Aux. SC: O(N)]
 
 class Solution
 {
