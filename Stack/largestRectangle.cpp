@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/largest-rectangle-in-histogram/
 
-// Approach: [TC: O(N) / SC: O(1)]
+// Approach: [TC: O(N) / SC: O(N)]
 
 class Solution {
 public:
