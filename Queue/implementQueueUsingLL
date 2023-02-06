@@ -1,18 +1,30 @@
-// Link: https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1
+// Link: https://practice.geeksforgeeks.org/problems/implement-queue-using-linked-list/1
 
 // Approach: [TC: O(1) / SC: O(1)]
 
-void MyQueue :: push(int x)
+void MyQueue:: push(int x)
 {
-    arr[rear] = x;
-    rear++;
+    if(!front && !rear){
+        QueueNode* temp = new QueueNode(x);
+        front = temp;
+        rear = temp;
+    }else{
+        QueueNode* temp = new QueueNode(x);
+        rear->next = temp;
+        rear = rear->next;
+    }
 }
 
-//Function to pop an element from queue and return that element.
 int MyQueue :: pop()
 {
-    if(front==rear) return -1;
-    int val = arr[front];
-    front++;
-    return val;
+    if(!front && !rear) return -1;
+    else{
+        if(front == rear) rear=rear->next;
+        QueueNode* next = front->next;
+        int val = front->data;
+        front->next = NULL;
+        delete front;
+        front = next;
+        return val;
+    }
 }
