@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/binary-search-1587115620/1
 
-// Approach: Recursion [TC: O(LogN) / SC: O(1)]
+// Approach: Recursion [TC: O(LogN) / SC: O(LogN)]
 
 class Solution {
   public:
