@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/reverse-a-string/1
 
-// Approach: Recursion [TC: O(N) / SC: O(1)]
+// Approach: Recursion [TC: O(|S|) / SC: O(1)]
 
 void reverse(string &str, int s){
     if(s>=str.length()/2) return;
