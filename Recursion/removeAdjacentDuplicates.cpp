@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/recursively-remove-all-adjacent-duplicates0744/1
 
-// Approach: Recursion [TC: O(|S|) / SC: O(|S|)]
+// Approach: Recursion [TC: O(N^2) / SC: O(N^2)]
 
 class Solution{
 public:
@@ -22,11 +22,13 @@ public:
     }
     
     void solve(string &s, string ans){
+        // base case
         if(s.size()==ans.size()) return;
         
         ans = s;
         s = removeDuplicates(ans);
         
+        // recursive call
         solve(s,ans);
     }
     
