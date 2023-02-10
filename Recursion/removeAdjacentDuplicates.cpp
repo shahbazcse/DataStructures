@@ -4,7 +4,7 @@
 
 class Solution{
 public:
-    string helper(string s){
+    string removeDuplicates(string s){
         string res;
         int n=s.size();
         int i=0;
@@ -21,14 +21,20 @@ public:
         return res;
     }
     
+    void solve(string &s, string ans){
+        if(s.size()==ans.size()) return;
+        
+        ans = s;
+        s = removeDuplicates(ans);
+        
+        solve(s,ans);
+    }
+    
     string rremove(string s){
         string ans;
         
-        while(s.size()!=ans.size()){
-            ans=s;
-            s=helper(ans);
-        }
+        solve(s,ans);
         
-        return ans;
+        return s;
     }
 };
