@@ -23,10 +23,9 @@ class Solution{
 	    if(n==0){
 	        ans.push_back(ds);
 	        return;
-	    }
-	    if(idx<=0){
-	        return;
-	    }
+		}
+		
+		if(idx==0) return;
 	    
 	    if(idx<=n){
             ds.push_back(idx);
