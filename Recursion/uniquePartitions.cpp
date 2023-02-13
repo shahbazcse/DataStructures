@@ -1,5 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/unique-partitions1041/1
 
+// Approach: [TC: O(2^N) / SC: O(N)]
 class Solution{
 	public:
 /*

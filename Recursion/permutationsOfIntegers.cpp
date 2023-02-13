@@ -1,4 +1,6 @@
-// Approach 1: Using flag array for marking fixed/not-fixed index
+// Link: https://leetcode.com/problems/permutations/
+
+// Approach 1: Using flag array for marking fixed/not-fixed index [TC: O() / SC: O()]
 
 class Solution {
 public:
@@ -29,7 +31,7 @@ public:
     }
 };
 
-// Approach 2: Using swap()
+// Approach 2: Using swap() [TC: O() / SC: O()]
 
 class Solution {
 public:
