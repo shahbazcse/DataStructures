@@ -1,7 +1,7 @@
 // Link: https://leetcode.com/problems/combination-sum-ii/
 
-// Approach: [TC: O((2^Target)*K) / SC: O(K*X)]
-// K is length of ans, X is number of combinations
+// Approach: [TC: O((2^N)*K) / SC: O(K*X)]
+// N is number of unique elements, K is length of ans, X is number of combinations
 
 class Solution {
 public:
