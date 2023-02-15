@@ -45,6 +45,7 @@ class Solution {
             if(B==0) ans.push_back(ds);
             return;
         }
+        // check element is smaller than target and element is not duplicate
         if(A[idx]<=B && A[idx]!=A[idx-1]){
             ds.push_back(A[idx]);
             solve(A,B-A[idx],ans,ds,idx);
