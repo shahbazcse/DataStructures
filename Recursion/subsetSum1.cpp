@@ -1,6 +1,6 @@
-// Link: 
+// Link: https://practice.geeksforgeeks.org/problems/subset-sums2234/1
 
-// Approach: [TC: O() / SC: O()]
+// Approach: [TC: O(2^N + (2^N)*log(2^N)) / SC: O(2^N)]
 
 class Solution
 {
