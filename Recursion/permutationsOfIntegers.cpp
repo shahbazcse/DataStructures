@@ -31,7 +31,7 @@ public:
     }
 };
 
-// Approach 2: Recursion +  swap() [TC: O() / SC: O()]
+// Approach 2: Recursion +  swap() [TC: O(N! * N) / Aux. SC: O(!N)]
 
 class Solution {
 public:
