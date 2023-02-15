@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/permutations/
 
-// Approach 1: Using flag array for marking fixed/not-fixed index [TC: O() / SC: O()]
+// Approach 1: Recursion + Hashing [TC: O(N! * N) / SC: O(N! + N + N)]
 
 class Solution {
 public:
@@ -31,7 +31,7 @@ public:
     }
 };
 
-// Approach 2: Using swap() [TC: O() / SC: O()]
+// Approach 2: Recursion +  swap() [TC: O() / SC: O()]
 
 class Solution {
 public:
