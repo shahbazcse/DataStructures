@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/reverse-nodes-in-k-group/
 
-// Approach: Recursion [TC: O(N) / SC: O()]
+// Approach: Recursion [TC: O(N) / SC: O(1)]
 
 class Solution {
 public:
@@ -35,7 +35,7 @@ public:
 
 // Link: https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1
 
-// Approach: Recursion [TC: O(N) / SC: O()]
+// Approach: Recursion [TC: O(N) / SC: O(1)]
 
 class Solution
 {
