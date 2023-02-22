@@ -6,6 +6,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    The number of recursive calls is indeed 4^(N/2) where N is the length of the string, as there are four recursive calls for each odd-length string. 
+    However, the time complexity is still O(2^(N/2)) because each recursive call generates two new strings of length N-2, so the total number of nodes 
+    in the recursive tree is 2^(N/2).
+    
+    In other words, although the number of recursive calls is 4^(N/2), each call generates two branches, which doubles the number of nodes at each level, 
+    resulting in a total of 2^(N/2) nodes. Therefore, the time complexity is O(2^(N/2)), which is still an exponential time complexity.
+*/
+
 void solve(int n, string left, string right, int diff){
     // even length of string
     if(n==0){
