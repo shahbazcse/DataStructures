@@ -1,4 +1,4 @@
-// Link: https://practice.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1
+// Link: https://practice.geeksforgeeks.org/problems/sum-of-digits1742/1
 
 // Approach: Recursion [TC: O(LogN(10base)) / SC: O(1)]
 
