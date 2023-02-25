@@ -20,7 +20,7 @@ class Solution{
     }
 };
 
-// Approach 2: Recursion - With 4 Rods [TC: O(2^N) / SC: O(N)]
+// Approach 2: Recursion - With 4 Rods [TC: O(2^(N/2)) / SC: O(N)]
 
 int steps=0; // Counter variable to keep track of the number of steps taken
 
