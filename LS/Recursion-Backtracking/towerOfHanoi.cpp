@@ -2,6 +2,8 @@
 
 // Approach 1: Recursion - With 3 Rods [TC: O(2^N) / SC: O(N)]
 
+// observe pattern: from -> aux && aux -> to
+
 class Solution{
     public:
     int steps=0;
@@ -12,15 +14,20 @@ class Solution{
             return steps;
         }
         
+        // from -> aux
         toh(N-1,from,aux,to);
         
+        // placing last disc from 'from' rod to 'to' rod
         cout<<"move disk "<<N<<" from rod "<<from<<" to rod "<<to<<endl;
         
+        // aux -> to
         toh(N-1,aux,to,from);
     }
 };
 
 // Approach 2: Recursion - With 4 Rods [TC: O(2^(N/2)) / SC: O(N)]
+
+// observe pattern: from -> aux1 && aux1 -> to , from -> aux2 && aux2 -> to
 
 int steps=0; // Counter variable to keep track of the number of steps taken
 
@@ -36,18 +43,20 @@ void toh(int n, char from, char to, char aux1, char aux2){
         return;
     }
     
-    // Move first n-2 disks to auxiliary rod 'aux1'
+    // Move first n-2 disks to from 'from' rod to auxiliary rod 'aux1' (from -> aux1)
     toh(n-2,from,aux1,aux2,to);
     steps++; // Increment step counter for the current move
     
-    // Move n-1th disk from 'from' rod to 'aux2' rod
+    // Move n-1th disk from 'from' rod to 'aux2' rod (from -> aux2)
     cout<<"move disk "<<n-1<<" from rod "<<from<<" to rod "<<aux2<<endl;
-    // Move nth disk from 'from' rod to 'to' rod
+
+    // Move nth disk from 'from' rod to 'to' rod (placing last disc from 'from' rod to 'to' rod)
     cout<<"move disk "<<n<<" from rod "<<from<<" to rod "<<to<<endl;
-    // Move n-1th disk from 'aux2' rod to 'to' rod
+
+    // Move n-1th disk from 'aux2' rod to 'to' rod (aux2 -> to)
     cout<<"move disk "<<n-1<<" from rod "<<aux2<<" to rod "<<to<<endl;
     
-    // Move remaining n-2 disks from auxiliary rod 'aux1' to 'to' rod
+    // Move remaining n-2 disks from auxiliary rod 'aux1' to 'to' rod (aux1 -> to)
     toh(n-2,aux1,to,from,aux2);
     steps++; // Increment step counter for the current move
 }
