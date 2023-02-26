@@ -34,34 +34,24 @@ public:
 class Solution
 {
 public:
-    int minSteps(int D)
+    int minSteps(int D) // A function that takes an integer D as input and returns an integer.
     {
-        // Initialize the number of steps taken so far and the current position of the frog to zero.
-        int steps = 0;
-        int sum = 0;
+        int target = abs(D); // Set target to the absolute value of D.
+        int step = 0; // Initialize step to 0 to keep track of the number of steps taken.
+        int sum = 0; // Initialize sum to 0 to keep track of the current position.
         
-        // Enter an infinite loop to simulate the frog jumping forward and backward.
-        while(1){
-            // Update the current position of the frog by adding the number of steps taken so far.
-            sum += steps;
-            
-            // Increment the number of steps taken by 1.
-            steps++;
-            
-            // Check if the frog has reached the target distance D.
-            if(sum == D){
-                // If so, return the number of steps taken so far minus 1 to represent the minimum number of steps required.
-                return steps-1;
-            }
-            
-            // Check if the frog has overshot the target distance D and can reach it by making equal forward and backward jumps.
-            if(sum > D && (sum-D)%2 == 0){
-                // If so, return the number of steps taken so far minus 1 to represent the minimum number of steps required.
-                return steps-1;
-            }
+        // Loop until the sum is greater than or equal to the target.
+        while(sum < target){
+            step++; // Increment step by 1.
+            sum += step; // Add step to sum.
         }
         
-        // This line of code is unreachable, but added to avoid a compiler warning.
-        return 0;
+        // If the difference between the sum and target is odd, add one more step to make it even.
+        while((sum-target)%2 != 0){
+            step++; // Increment step by 1.
+            sum+=step; // Add step to sum.
+        }
+        
+        return step; // Return the final value of step.
     }
 };
