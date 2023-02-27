@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/word-break-part-23249/1
 
-// Approach: [TC: O((|S|)^2*N) / SC: O((|S|)^2)]
+// Approach: Recursion + Backtracking [TC: O((|S|)^2*N) / SC: O((|S|)^2)]
 // |S| is length of string s, N is size of dictionary dict
 
 class Solution{
