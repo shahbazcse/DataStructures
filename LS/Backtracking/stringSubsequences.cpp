@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/power-set4302/1
 
-// Approach: Recursion [TC: O((2^N)*N) / SC: O((2^N)*N)]
+// Approach: Recursion + Backtracking [TC: O((2^N)*N) / SC: O((2^N)*N)]
 // N is length of string s
 
 class Solution{

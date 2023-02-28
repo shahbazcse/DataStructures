@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/combination-sum/
 
-// Approach: [TC: O((2^Target)*K) / SC: O(K*X)]
+// Approach: Backtracking [TC: O((2^Target)*K) / SC: O(K*X)]
 // K is length of ans, X is number of combinations
 
 class Solution {

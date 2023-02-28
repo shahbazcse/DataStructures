@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/n-queen-problem0315/1
 
-// Approach 1: Recursion [TC: O(!N * N) / Aux. SC: O(N^2)]
+// Approach 1: Recursion + Backtracking [TC: O(!N * N) / Aux. SC: O(N^2)]
 
 class Solution{
 public:
