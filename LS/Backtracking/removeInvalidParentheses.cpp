@@ -9,7 +9,7 @@ class Solution {
     
     // function to check if a given string of parentheses is valid and return the number of invalid parentheses
     int isValid(string s){
-        stack<int> st; // create a stack to store opening parentheses
+        stack<char> st; // create a stack to store opening parentheses
         
         // iterate through each character in the string
         for(int i=0; i<s.size(); i++){
@@ -30,7 +30,6 @@ class Solution {
     
     // recursive function to generate all possible combinations of the input string by removing invalid parentheses
     void solve(string s, int invalid){
-        if(invalid < 0) return; // stop recursion if there are more closing parentheses than opening parentheses
         if(invalid == 0){ // base case: no more invalid parentheses left in the string
             int cnt = isValid(s); // check if the resulting string is valid
             if(cnt==0){ // if it is valid, add it to the answer vector
