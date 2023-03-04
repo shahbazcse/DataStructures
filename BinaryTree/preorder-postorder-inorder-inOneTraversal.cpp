@@ -16,25 +16,25 @@ vector<vector<int>> getTreeTraversal(BinaryTreeNode<int> *root){
 
     // While the stack is not empty, pop nodes from the stack and process them
     while(!st.empty()){
-        // Get the next node to process from the stack
+        // Get the top node to process from the stack
         auto it = st.top();
         st.pop();
 
-        // If the node is being processed in pre-order, add it to the pre-order vector and push its left child onto the stack
+        // If the node is being processed in pre-order, add it to the pre-order vector 
         if(it.second == 1){
             preOrder.push_back(it.first->data);
             it.second++; // add node with in-order traversal order in the stack
             st.push(it);
 
-            if(it.first->left != NULL) st.push({it.first->left,1});
+            if(it.first->left != NULL) st.push({it.first->left,1}); // add left child with pre-order traversal order onto the stack
 
-        // If the node is being processed in in-order, add it to the in-order vector and push its right child onto the stack
+        // If the node is being processed in in-order, add it to the in-order vector
         }else if(it.second == 2){
             inOrder.push_back(it.first->data);
             it.second++; // add node with post-order traversal order in the stack
             st.push(it);
 
-            if(it.first->right != NULL) st.push({it.first->right,1});
+            if(it.first->right != NULL) st.push({it.first->right,1}); // add right child with pre-order traversal order onto the stack
 
         // If the node is being processed in post-order, add it to the post-order vector
         }else{
