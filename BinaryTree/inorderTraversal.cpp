@@ -37,7 +37,7 @@ public:
     }
 };
 
-// Approach 2: Iterative + Stack [TC: O() / SC: O()]
+// Approach 2: Iterative + Stack [TC: O(N) / SC: O(N)]
 
 /**
  * Definition for a binary tree node.
