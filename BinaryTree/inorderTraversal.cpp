@@ -37,7 +37,7 @@ public:
     }
 };
 
-// Approach 2: Iterative + Stack [TC: O(N) / SC: O(N)]
+// Approach 2: Iterative + Stack [TC: O() / SC: O()]
 
 /**
  * Definition for a binary tree node.
@@ -52,22 +52,25 @@ public:
  */
 class Solution {
 public:
-    vector<int> preorderTraversal(TreeNode* root) {
+    vector<int> inorderTraversal(TreeNode* root) {
         vector<int> ans;
         if(root==NULL) return ans;
 
+        TreeNode* top = root;
+        
         stack<TreeNode*> st;
-        st.push(root);
 
-        while(!st.empty()){
-            TreeNode* top = st.top();
-            st.pop();
-
-            ans.push_back(top->val);
-
-            if(top->right!=NULL) st.push(top->right);
-            if(top->left!=NULL) st.push(top->left);
-
+        while(1){
+            if(top!=NULL){
+                st.push(top);
+                top = top->left;
+            }else{
+                if(st.empty()) break;
+                top = st.top();
+                st.pop();
+                ans.push_back(top->val);
+                top = top->right;
+            }
         }
         return ans;
     }
