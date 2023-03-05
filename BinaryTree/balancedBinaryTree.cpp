@@ -1,14 +1,14 @@
 // Link: https://leetcode.com/problems/balanced-binary-tree/
 
-// Appraoch: Recursion [TC: O(N) / SC: O(N)]
+// Approach: Recursion [TC: O(N) / SC: O(N)]
 
 class Solution {
 public:
     int dfsHeight(TreeNode* root){
-        // if reached the leaf node, return 0 as there is no depth(no nodes) further
+        // if reached the leaf node, return 0 as there is no height(no nodes) further
         if(root==NULL) return 0;
 
-        // make recursive calls to count depth for left and right child nodes and store the returned depth count
+        // make recursive calls to count height for left and right child nodes and store the returned height count
         int l = dfsHeight(root->left);
         int r = dfsHeight(root->right);
 
