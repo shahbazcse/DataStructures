@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/root-to-leaf-path-sum/1
 
-// Approach: Recursion [TC: O() / SC: O()]
+// Approach: Recursion [TC: O(N) / SC: O(N)]
 
 class Solution
 {
