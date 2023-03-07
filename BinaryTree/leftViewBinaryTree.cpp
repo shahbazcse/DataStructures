@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
 
-// Approach: Iterative + Queue [TC: O(N) / SC: O(N)]
+// Approach 1: Iterative + Queue [TC: O(N) / SC: O(N)]
 
 vector<int> leftView(Node *root)
 {
