@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/symmetric-tree/
 
-// Approach: [TC: O(N) / SC: O(N)]
+// Approach: Recursion [TC: O(N) / SC: O(N)]
 
 class Solution {
 public:

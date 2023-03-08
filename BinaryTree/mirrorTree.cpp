@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/mirror-tree/1
 
-// Apporoach: [TC: O(N) / SC: O(N)]
+// Approach: Recursion [TC: O(N) / SC: O(N)]
 
 class Solution {
   public:
