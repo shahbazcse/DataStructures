@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/mirror-tree/1
 
-// Approach: Recursion [TC: O(N) / SC: O(N)]
+// Approach: Recursion + Swap [TC: O(N) / SC: O(N)]
 
 class Solution {
   public:
@@ -11,7 +11,7 @@ class Solution {
         mirror(node->left);
         mirror(node->right);
 
-        // if either of the child nodes exist, swap both the child nodes with data and address
+        // if the child nodes are not a leaf node, swap both the child nodes with data and address
         if(node->left || node->right) swap(node->left,node->right);
     }
 };
