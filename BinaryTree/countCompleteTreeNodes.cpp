@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/count-complete-tree-nodes
 
-// Approach: Recursion [TC: O((LogN)^2) / SC: O(LogN)]
+// Approach: Recursion + Height Of Tree [TC: O((LogN)^2) / SC: O(LogN)]
 
 class Solution {
 public:
