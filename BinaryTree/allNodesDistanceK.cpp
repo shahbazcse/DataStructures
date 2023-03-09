@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
 
-// Approach: Recursion + BFS + Queue + Unordered Map [TC: O(N) / SC: O(N)]
+// Approach: BFS + Queue + Unordered Map [TC: O(N) / SC: O(N)]
 
 class Solution {
 public:
