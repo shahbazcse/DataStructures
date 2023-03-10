@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
 
-// Approach: Recursion + Map [TC: O(N) / SC: O(N)]
+// Approach: Recursion + Map [TC: O(NLogN) / SC: O(N)]
 
 class Solution {
 public:
