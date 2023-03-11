@@ -16,7 +16,13 @@ public:
                 cnt++;
             }else cnt--;
         }
-        return element;
+        // check if element occurs more than size/2 times, then it's a majority element
+        cnt=0;
+        for(int i=0; i<size; i++){
+            if(nums[i]==element) cnt++;
+        }
+        if(cnt>size/2) return element;
+        else return -1;
     }
 };
 
