@@ -12,7 +12,7 @@ public:
         TreeNode* curr = root;
 
         while(curr){
-            // If the current node has no left child, then it is a leaf node, store it and move to its right child (if any).
+            // If the current node has no left child, then it is a leaf node, visit it and store it and move to its right child (if any).
             if(curr->left==NULL){
                 inorder.push_back(curr->val);
                 curr=curr->right;
@@ -36,7 +36,7 @@ public:
                 }else{
                     // If we reach a node whose right child is the current node (Threading is already done), then we 
                     // have already visited its left subtree, so we unlink it (by setting 
-                    // its right child to NULL), store the current node, and move to its 
+                    // its right child to NULL), visiit and store the current node, and move to its 
                     // right child (if any).
                     prev->right=NULL;
                     inorder.push_back(curr->val);
