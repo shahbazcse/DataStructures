@@ -36,7 +36,7 @@ public:
                 }else{
                     // If we reach a node whose right child is the current node (Threading is already done), then we 
                     // have already visited its left subtree, so we unlink it (by setting 
-                    // its right child to NULL), visiit and store the current node, and move to its 
+                    // its right child to NULL), visit and store the current node, and move to its 
                     // right child (if any).
                     prev->right=NULL;
                     inorder.push_back(curr->val);
