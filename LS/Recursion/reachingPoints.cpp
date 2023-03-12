@@ -33,14 +33,9 @@ public:
 
 // Approach: Recursion [TC: O(N) / SC: O(N)]
 
-bool solve(int sx, int sy, int dx, int dy){
+bool reachDestination(int sx, int sy, int dx, int dy) {
     if(sx==dx && sy==dy) return true;
     if(dx<1 || dy<1) return false;
 
-    return (solve(sx,sy,dx-dy,dy) || solve(sx,sy,dx,dy-dx));
-}
-
-bool reachDestination(int sx, int sy, int dx, int dy) {
-    if(solve(sx,sy,dx,dy)) return true;
-    else return false;
+    return (reachDestination(sx,sy,dx-dy,dy) || reachDestination(sx,sy,dx,dy-dx));
 }
