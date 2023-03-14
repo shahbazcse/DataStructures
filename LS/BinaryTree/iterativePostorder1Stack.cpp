@@ -1,37 +1,44 @@
-// Link: https://leetcode.com/problems/binary-tree-postorder-traversal/
+// Link: https://practice.geeksforgeeks.org/problems/postorder-traversal-iterative/1
 
 // Approach 1: Iterative + 1 Stack [TC: O(N) / SC: O(N)]
 
-class Solution {
-public:
-    vector<int> postorderTraversal(TreeNode* root) {
-        vector<int> ans; // create empty vector to store node values
-
-        TreeNode* curr = root; // set current node to root
-        stack<TreeNode*> st; // create empty stack to store nodes
-
-        while(curr || !st.empty()){ // while there are still nodes to visit
-            if(curr){ // if current node exists
-                st.push(curr); // push it onto the stack
-                curr=curr->left; // set current to its left child
-            }else{ // if current node doesn't exist
-                TreeNode* top = st.top()->right; // set top to the right child of the top node on the stack
-                if(!top){ // if top node has no right child or right child has already been visited
-                    top = st.top(); // set top to the top node on the stack
-                    st.pop(); // pop the top node off the stack
-
-                    ans.push_back(top->val); // add top node's value to ans vector
-
-                    // continue to pop nodes from the stack until it finds a node whose right child has not been visited yet
-                    while(!st.empty() && top == st.top()->right){ 
-                        top = st.top(); // set top to the top node on the stack
-                        st.pop(); // pop the top node off the stack
-                        ans.push_back(top->val); // add top node's value to ans vector
+class Solution{
+    public:
+    vector<int> postOrder(Node* node) {
+        vector<int> post;
+        if(node==NULL) return post;
+        
+        Node* curr = node;
+        
+        stack<Node*> st;
+        
+        while(curr || !st.empty()){
+            // move to left node
+            if(curr){
+                st.push(curr);
+                curr = curr->left;
+            }else{
+                // move to right node
+                Node* top = st.top()->right;
+                
+                // check leaf node
+                if(top==NULL){
+                    top = st.top();
+                    st.pop();
+                    
+                    post.push_back(top->data);
+                    
+                    // root node
+                    while(!st.empty() && top == st.top()->right){
+                        top = st.top();
+                        st.pop();
+                        
+                        post.push_back(top->data);
                     }
-                }else curr = top; // if top node has a right child that hasn't been visited yet, set it as the new current node
+                }else curr = top;
             }
         }
-        return ans; // return ans vector containing postorder traversal
+        return post;
     }
 };
 
@@ -55,6 +62,7 @@ class Solution{
         stack<Node*> st;
         
         while(1){
+            // move to left node
             while(curr){
                 st.push(curr);
                 st.push(curr);
@@ -66,8 +74,10 @@ class Solution{
             curr = st.top();
             st.pop();
             
+            // move to right node
             if(!st.empty() && st.top() == curr) curr = curr->right;
             else{
+                // root node
                 postorder.push_back(curr->data);
                 curr = NULL;
             }
@@ -93,13 +103,18 @@ class Solution{
         while(!st.empty()){
             Node* curr = st.top();
             
+            // mark visited
             visited[curr] = 1;
             
+            // move to left child node
             if(curr->left && !visited[curr->left]){
                 st.push(curr->left);
-            }else if(curr->right && !visited[curr->right]){
+            }
+            // move to right child node
+            else if(curr->right && !visited[curr->right]){
                 st.push(curr->right);
             }else{
+                // visited node or leaf node
                 postorder.push_back(curr->data);
                 st.pop();
             }
