@@ -1,12 +1,12 @@
 // Link: https://leetcode.com/problems/find-duplicate-subtrees/
 
-// Approach 1: Recursion + Hashing + String [TC: O(N) / SC: O(N)]
+// Approach: Recursion + Hashing + String [TC: O(N) / SC: O(N)]
 
 class Solution {
 public:
     string helper(TreeNode* root, vector<TreeNode*> &ans, map<string,int> &mpp){
         // if nodes are NULL or leaf nodes' child
-        if(root==NULL) return "#";
+        if(root==NULL) return "null";
 
         // make recursive calls and generate postorder traversal of the current subtree
         string str = helper(root->left,ans,mpp)+','+helper(root->right,ans,mpp)+','+to_string(root->val);
@@ -33,5 +33,3 @@ public:
         return ans;
     }
 };
-
-// Approach 2: 
