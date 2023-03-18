@@ -10,7 +10,7 @@ int findCeil(Node* root, int input) {
     while(root){
         if(root->data == input){
             ceil = root->data;
-            return ceil;
+            break;
         }
         
         if(root->data < input) root = root->right;
