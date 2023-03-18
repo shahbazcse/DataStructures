@@ -5,6 +5,9 @@
 int findCeil(Node* root, int input) {
     if (root == NULL) return -1;
 
+    /*
+        Ceil returns the smallest integer value which is greater than or equal to input
+    */
     int ceil = -1;
     
     while(root){

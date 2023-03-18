@@ -5,6 +5,9 @@
 int floor(Node* root, int x) {
     if (root == NULL) return -1;
 
+    /*
+        Floor returns the largest integer value which is less than or equal to x
+    */
     int floor = -1;
     
     while(root){
