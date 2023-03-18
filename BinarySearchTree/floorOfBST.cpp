@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/floor-in-bst/1
 
-// Approach: Iterative [TC: O(N) / SC: O(1)]
+// Approach: Iterative [TC: O(Height) / SC: O(1)]
 
 int floor(Node* root, int x) {
     if(root==NULL) return -1;
