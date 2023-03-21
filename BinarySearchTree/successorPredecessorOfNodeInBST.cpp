@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/predecessor-and-successor/1
 
-// Approach: Iteartive [TC: O(Height) / SC: O(1)]
+// Approach: Iterative [TC: O(Height) / SC: O(1)]
 
 void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
 {
