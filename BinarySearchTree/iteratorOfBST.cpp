@@ -1,6 +1,6 @@
 // Link: https://leetcode.com/problems/binary-search-tree-iterator/
 
-// Approach: Iterative + Stack [TC: O(N) / SC: O(1)]
+// Approach: Iterative + Stack [TC: O(N) / SC: O(Height)]
 
 class BSTIterator {
 private:
