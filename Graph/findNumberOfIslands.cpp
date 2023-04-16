@@ -4,7 +4,7 @@
 
 class Solution {
   public:
-    // BFS Traversal
+    // BFS Traversal (can also be solved using DFS Traversal)
     void bfs(vector<vector<char>> grid, vector<vector<int>> &vis, int row, int col){
         vis[row][col] = 1;
         
