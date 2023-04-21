@@ -45,7 +45,7 @@ class Solution {
     }
 };
 
-// Approach 2: DFS Traversal [TC: O() / SC: O()]
+// Approach 2: DFS Traversal [TC: O(V+2E) / SC: O(V)]
 
 class Solution {
   public:
