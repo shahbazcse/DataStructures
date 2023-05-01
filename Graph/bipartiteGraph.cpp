@@ -5,7 +5,7 @@
 class Solution {
 public:
     bool check(int start, int V, vector<int> adj[], int color[]){
-	    color[start] = 0;
+	    color[start] = 0; // color the starting node with 0
 	    
 	    queue<int> q;
 	    q.push(start);
@@ -15,10 +15,12 @@ public:
 	        q.pop();
 	        
 	        for(auto it : adj[node]){
+                // if node is not visited and not colored
 	            if(color[it] == -1){
-	                color[it] = !color[node];
-	                q.push(it);
+	                color[it] = !color[node]; // color the node with opposite color of the adjacent node (parent node)
+	                q.push(it); // and store it in queue
 	            }
+                // if the node is visited and it has same color as its adjacent node (parent node), then graph is not bipartite
 	            else if(color[it] == color[node]){
 	                return false;
 	            }
@@ -27,8 +29,9 @@ public:
 	    return true;
     }
 	bool isBipartite(int V, vector<int>adj[]){
+        // keep track of the visited nodes and their alterate color behaviour
         int color[V];
-	    for(int i=0; i<V; i++) color[i]=-1;
+	    for(int i=0; i<V; i++) color[i] = -1;
 	    
         // check for all connected components
 	    for(int i=0; i<V; i++){
