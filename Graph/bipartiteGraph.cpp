@@ -4,7 +4,7 @@
 
 class Solution {
 public:
-    bool check(int start, int V, vector<int> adj[], int color[]){
+    bool check(int start, vector<int> adj[], int color[]){
 	    color[start] = 0; // color the starting node with 0
 	    
 	    queue<int> q;
@@ -36,12 +36,38 @@ public:
         // check for all connected components
 	    for(int i=0; i<V; i++){
 	        if(color[i] == -1){
-	            if(check(i,V,adj,color) == false) return false;
+	            if(check(i,adj,color) == false) return false;
 	        }
 	    }
 	    return true;
 	}
 };
 
-// Approach 2: DFS + Hashing [TC: O() / SC: O()]
+// Approach 2: DFS + Hashing [TC: O(V+2E) / SC: O(V)]
 
+class Solution {
+public:
+    bool check(int start, int color[], vector<int> adj[]){
+	    for(auto it : adj[start]){
+	        if(color[it]==-1){
+	            color[it] = !color[start];
+	            if(check(it,color,adj) == false) return false;
+	        }else if(color[it] == color[start]){
+	            return false;
+	        }
+	    }
+	    return true;
+    }
+	bool isBipartite(int V, vector<int>adj[]){
+	    int color[V];
+	    for(int i=0; i<V; i++) color[i]=-1;
+	    
+	    for(int i=0; i<V; i++){
+	        if(color[i]==-1){
+	            color[i] = 0;
+	            if(check(i,color,adj) == false) return false;
+	        }
+	    }
+	    return true;
+	}
+};
