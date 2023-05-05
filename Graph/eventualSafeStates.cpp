@@ -23,7 +23,7 @@ class Solution {
             }
         }
         
-        safeNodes[node] = 1; // if there don't exist a cycle upto the current node then current node is a safe node, mark it true after backtracking
+        safeNodes[node] = 1; // if there don't exist a cycle in returned recursive calls, then current node is a safe node, mark it true after backtracking
         pathVis[node] = 0; // mark node unvisited in current path after backtrack
         return false;
     }
