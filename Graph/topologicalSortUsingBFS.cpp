@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/topological-sort/1
 
-// Approach: BFS + Hashing + Indegree Array [TC: O(V+E) / SC: O(V)]
+// Approach: BFS + Hashing + Indegree Array (Kahn's Algorithm) [TC: O(V+E) / SC: O(V)]
 
 class Solution
 {
