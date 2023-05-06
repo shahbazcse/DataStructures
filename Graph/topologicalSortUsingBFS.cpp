@@ -8,7 +8,7 @@ class Solution
 	//Function to return list containing vertices in Topological order. 
 	vector<int> topoSort(int V, vector<int> adj[]) 
 	{   
-        // to store the number of outgoing edges from a node
+        // to store the number of incoming edges to an adjacent node
 	    int indegree[V] = {0};
 	    for(int i=0; i<V; i++){
 	        for(auto it: adj[i]){
