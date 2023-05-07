@@ -1,6 +1,6 @@
 // Link: https://practice.geeksforgeeks.org/problems/prerequisite-tasks/1
 
-// Approach: BFS + Topological Sort [TC: O() / SC: O()]
+// Approach: BFS + Topological Sort [TC: O(N+P) / SC: O(N+P)]
 
 class Solution {
 public:
