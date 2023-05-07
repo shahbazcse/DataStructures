@@ -42,11 +42,19 @@ public:
     }
     
 	bool isPossible(int N, vector<pair<int, int> >& prerequisites) {
-        // creating adjacency list
+		/* Eg:
+			prerequisites = {{1,0},{2,1},{3,2}}
+			0->1 : first task 0 should be finished, then task 1 is started
+			1->2 : first task 1 should be finished, then task 2 is started
+			2->3 : first task 2 should be finished, then task 3 is started
+		*/
+        
+		// creating adjacency list
 	    vector<int> adj[N];
 	    for(auto it : prerequisites){
-	        adj[it.first].push_back(it.second);
+	        adj[it.second].push_back(it.first);
 	    }
+
 	    
 	    vector<int> ans = topoSort(N,adj);
 
