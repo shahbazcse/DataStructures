@@ -10,13 +10,13 @@ public:
             vector<vector<int>> &bridges) {
         vis[node] = 1;  // Mark the current node as visited
         tin[node] = low[node] = timer;  // Initialize discovery time and low value for the current node
-        timer++;
+        timer++; // increase timer count by 1 for next node
 
         for(auto it : adj[node]) {  // Iterate through all adjacent nodes of the current node
             if(it == parent) continue;  // Skip the parent node from the iteration
 
             if(!vis[it]) {  // If the adjacent node is not visited, perform DFS on it
-                dfs(it, node, vis, adj, tin, low, bridges);
+                dfs(it, node, vis, adj, tin, low, bridges); // Recursive call to visit the adjacent node
                 low[node] = min(low[node], low[it]);  // Update the low value of the current node
 
                 if(low[it] > tin[node]) {
