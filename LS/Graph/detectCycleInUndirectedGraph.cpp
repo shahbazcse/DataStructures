@@ -90,6 +90,7 @@ class Solution {
 
 class Solution {
   public:
+    // Disjoint Set Data Structure
     class DisjointSet{
         vector<int> rank,parent,size;
     public:
@@ -153,7 +154,6 @@ class Solution {
                 }
             }
         }
-
         return 0;
     }
 };
