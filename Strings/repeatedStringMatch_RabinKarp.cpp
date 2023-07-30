@@ -29,7 +29,8 @@ public:
     }
 };
 
-// Approach 2: Rabin Karp [TC: O(N*M) / SC: O(N*M)]
+// Approach 2: Rabin Karp Algorithm [TC: O(N*M) / SC: O(N*M)]
+// N = size of source string, M = size of target string
 
 class Solution {
 private:
