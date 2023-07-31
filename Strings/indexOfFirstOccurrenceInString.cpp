@@ -85,5 +85,55 @@ public:
     }
 };
 
-// Approach 3: KMP Algorithm / LPS(pi) Array [TC: O() / SC: O()]
+// Approach 3: KMP Algorithm / LPS(pi) Array [TC: O(M+N) / SC: O(M)]
+// M = size of needle string
 
+class Solution {
+public:
+    // Function to compute the Longest Prefix Suffix (LPS) array for a given pattern.
+    vector<int> processLPS(string pattern){
+        int n = pattern.size();
+        vector<int> lps(n, 0);
+
+        int p=0, i=1;
+        while(i<pattern.size()){
+            if(pattern[p] == pattern[i]){
+                lps[i] = p+1;  // Store the length of the common prefix and suffix.
+                p++;          // Move to the next character in the pattern.
+                i++;          // Move to the next character in the pattern.
+            } else {
+                if(p == 0) {
+                    lps[i] = 0;  // No common prefix and suffix. Set LPS value to 0.
+                    i++;        // Move to the next character in the pattern.
+                } else {
+                    p = lps[p-1]; // Try to find a shorter common prefix and suffix.
+                }
+            }
+        }
+
+        return lps;  // Return the LPS array.
+    }
+
+    // Function to find the first occurrence of the 'needle' in 'haystack' using the KMP algorithm.
+    int strStr(string haystack, string needle) {
+        vector<int> lps = processLPS(needle);  // Compute the LPS array for the 'needle' string.
+
+        int j = 0;  // Index for 'needle' string.
+        int i = 0;  // Index for 'haystack' string.
+        while(i < haystack.size()){
+            if(haystack[i] == needle[j]){  // If characters match, move both indices forward.
+                i++;
+                j++;
+            } else {
+                if(j == 0) {
+                    i++;  // If j is 0, no characters match, move to the next character in 'haystack'.
+                } else {
+                    j = lps[j-1];  // Try to find a shorter common prefix and suffix in 'needle'.
+                }
+            }
+            if(j == needle.size()) return i - needle.size();  // If the entire 'needle' has been matched, return the starting index.
+        }
+
+        return -1;  // 'needle' not found in 'haystack', return -1.
+    }
+};
