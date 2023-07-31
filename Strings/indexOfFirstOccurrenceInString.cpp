@@ -118,8 +118,8 @@ public:
     int strStr(string haystack, string needle) {
         vector<int> lps = processLPS(needle);  // Compute the LPS array for the 'needle' string.
 
-        int j = 0;  // Index for 'needle' string.
         int i = 0;  // Index for 'haystack' string.
+        int j = 0;  // Index for 'needle' string.
         while(i < haystack.size()){
             if(haystack[i] == needle[j]){  // If characters match, move both indices forward.
                 i++;
